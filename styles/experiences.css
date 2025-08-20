@@ -1,0 +1,186 @@
+/* Section wrapper spacing */
+.section-index {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Headings for sections (like Projects) */
+.section-index .heading h2 {
+    margin: 0;              /* remove default h2 margin */
+    padding: 0 0 0 0;    /* only controlled bottom spacing */
+}
+
+/* Cards (Work Exp, Projects, Education) */
+.experience-item,
+.education-item,
+.projects-item {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* prevent uneven spacing */
+}
+
+.experience-item:hover,
+.education-item:hover,
+.projects-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+body.dark-mode .experience-item,
+body.dark-mode .education-item,
+body.dark-mode .projects-item {
+    background: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Layout grid (Flex version) */
+.experience-list,
+.education-list,
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 1rem;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    justify-content: center; /* ✅ centers the last row */
+}
+/* Make only the last project card 180% bigger without scaling text */
+.projects-item:last-child {
+    flex: 1 1 calc(60% - 1.5rem);   /* wider card (approx 1.8× the normal width) */
+    max-width: calc(60% - 1.5rem);
+    padding: 2rem;                   /* increase padding proportionally */
+}
+
+/* Desktop: 3 columns layout adjustment */
+@media (min-width: 1200px) {
+    .projects-item:last-child {
+        flex: 1 1 calc(60% - 1.5rem);  /* last card takes more space on desktop */
+        max-width: calc(60% - 1.5rem);
+    }
+}
+
+.experience-item,
+.education-item,
+.projects-item {
+    flex: 1 1 calc(100% - 1.5rem);
+    max-width: calc(100% - 1.5rem);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+    .experience-item,
+    .education-item,
+    .projects-item {
+        flex: 1 1 calc(50% - 1.5rem);
+        max-width: calc(50% - 1.5rem);
+    }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1200px) {
+    .projects-item {
+        flex: 1 1 calc(33.333% - 1.5rem);
+        max-width: calc(33.333% - 1.5rem);
+    }
+}
+
+/* Headings inside cards */
+.projects-headers {
+    margin: 0; /* no extra margin */
+    padding: 0; 
+}
+
+.projects-headers h3,
+.experience-item h3,
+.education-item h3 {
+    margin: 0; /* kill default h3 top/bottom margin */
+    padding: 0 0 0.4rem 0; /* only small bottom padding */
+    font-size: 1.1rem;
+    color: #4f46e5;
+}
+
+body.dark-mode .projects-headers h3,
+body.dark-mode .experience-item h3,
+body.dark-mode .education-item h3 {
+    color: #818cf8;
+}
+
+/* Card details */
+.projects-detail {
+    margin: 0;               /* remove ul default margin */
+    padding-left: 1.2rem;    /* keep bullets aligned */
+}
+
+.projects-detail li,
+.experience-item li {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+body.dark-mode .projects-detail li,
+body.dark-mode .experience-item li {
+    color: #ccc;
+}
+
+/* Italic notes */
+.projects-detail i {
+    color: #6b7280;
+}
+
+body.dark-mode .projects-detail i {
+    color: #aaa;
+}
+
+.contact-footer {
+    background: #113263; /* dark blue */
+    color: white;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 3px solid #4f46e5; /* accent line */
+}
+.contact-footer a{
+    color: white;
+}
+
+/* Container to align items */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Footer Note */
+.footer-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+body.dark-mode .contact-footer {
+    background: #1e1e1e;
+    border-top: 3px solid #818cf8;
+}
+
+
+
+
+
+
